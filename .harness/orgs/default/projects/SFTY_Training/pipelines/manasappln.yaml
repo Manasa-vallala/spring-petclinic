@@ -32,7 +32,9 @@ pipeline:
                   type: Run
                   name: Run_1
                   identifier: Run_1
-                  spec: {}
+                  spec:
+                    shell: Sh
+                    command: ls -l
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
