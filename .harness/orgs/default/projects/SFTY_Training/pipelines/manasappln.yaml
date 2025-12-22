@@ -46,6 +46,13 @@ pipeline:
                       - v1
                     dockerfile: Dockerfile
                     context: .
+              - step:
+                  type: Run
+                  name: Run_2
+                  identifier: Run_2
+                  spec:
+                    shell: Sh
+                    command: docker login -u mydockeruser -p <+secrets.getValue("docker_pat_m")>
     - stage:
         name: k8s-deploy-m
         identifier: k8sdeploym
