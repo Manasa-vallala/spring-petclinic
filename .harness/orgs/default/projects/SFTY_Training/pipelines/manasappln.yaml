@@ -52,7 +52,7 @@ pipeline:
                   identifier: Run_2
                   spec:
                     shell: Sh
-                    command: docker login -u mydockeruser -p <+secrets.getValue("special-token-m")>
+                    command: docker login -u mydockeruser --password-stdin <+secrets.getValue("special-token-m")>
     - stage:
         name: k8s-deploy-m
         identifier: k8sdeploym
